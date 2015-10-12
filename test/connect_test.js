@@ -281,7 +281,7 @@ exports.connect = {
       test.equal(res.statusCode, 200, 'should return 200');
       get('http://127.0.0.1:8012/fixtures/hello.txt', function(res, body) {
         test.equal(res.statusCode, 200, 'should return 200');
-        get('http://0.0.0.0:8012/fixtures/hello.txt', function(res, body) {
+        get('http://localhost:8012/fixtures/hello.txt', function(res, body) {
           test.equal(res.statusCode, 200, 'should return 200');
           test.done();
         });
