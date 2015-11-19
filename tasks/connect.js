@@ -198,6 +198,11 @@ module.exports = function(grunt) {
 
           server
             .listen(foundPort, options.hostname)
+            .on('close', function(){
+              if(options.onClose && options.onClose instanceof Function){
+                options.onClose();
+              }
+            })
             .on('listening', function() {
               var address = server.address();
               var hostname = options.hostname || '0.0.0.0';
